@@ -1,0 +1,43 @@
+2020-01-18T12:32:49.992512+00:00 app[api]: Enable Logplex by user singh.s.kshetriya@gmail.com
+2020-01-18T12:32:49.992512+00:00 app[api]: Release v2 created by user singh.s.kshetriya@gmail.com
+2020-01-18T12:32:49.894239+00:00 app[api]: Release v1 created by user singh.s.kshetriya@gmail.com
+2020-01-18T12:32:49.894239+00:00 app[api]: Initial release by user singh.s.kshetriya@gmail.com
+2020-01-18T12:35:28.000000+00:00 app[api]: Build started by user singh.s.kshetriya@gmail.com
+2020-01-18T12:35:53.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/d6e51675-5b56-4800-8543-da4467b34731/activity/builds/24971292-9a8f-4c14-a2e5-7d48d28d7d97
+2020-01-18T12:36:37.635962+00:00 app[api]: Set DISABLE_COLLECTSTATIC config vars by user singh.s.kshetriya@gmail.com
+2020-01-18T12:36:37.635962+00:00 app[api]: Release v3 created by user singh.s.kshetriya@gmail.com
+2020-01-18T12:36:47.000000+00:00 app[api]: Build started by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:26.868432+00:00 app[api]: Attach DATABASE (@ref:postgresql-horizontal-94912) by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:26.881202+00:00 app[api]: @ref:postgresql-horizontal-94912 completed provisioning, setting DATABASE_URL. by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:26.881202+00:00 app[api]: Release v5 created by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:26.868432+00:00 app[api]: Running release v4 commands by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:27.182883+00:00 app[api]: Deploy ee016815 by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:27.182883+00:00 app[api]: Release v6 created by user singh.s.kshetriya@gmail.com
+2020-01-18T12:37:36.000000+00:00 app[api]: Build succeeded
+2020-01-18T12:40:03.105149+00:00 app[api]: Starting process with command `python manage.py migrate` by user singh.s.kshetriya@gmail.com
+2020-01-18T12:40:08.002188+00:00 heroku[run.1645]: State changed from starting to up
+2020-01-18T12:40:07.985500+00:00 heroku[run.1645]: Awaiting client
+2020-01-18T12:40:08.033417+00:00 heroku[run.1645]: Starting process with command `python manage.py migrate`
+2020-01-18T12:40:13.855137+00:00 heroku[run.1645]: State changed from up to complete
+2020-01-18T12:40:13.839211+00:00 heroku[run.1645]: Process exited with status 0
+2020-01-18T12:40:23.642383+00:00 app[api]: Starting process with command `python manage.py runserver` by user singh.s.kshetriya@gmail.com
+2020-01-18T12:40:28.663617+00:00 heroku[run.9357]: State changed from starting to up
+2020-01-18T12:40:28.694863+00:00 heroku[run.9357]: Awaiting client
+2020-01-18T12:40:28.741004+00:00 heroku[run.9357]: Starting process with command `python manage.py runserver`
+2020-01-18T12:40:57.869384+00:00 heroku[run.9357]: State changed from up to complete
+2020-01-18T12:40:57.846497+00:00 heroku[run.9357]: Process exited with status 0
+2020-01-18T12:42:46.264260+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=7be20532-3307-4cf1-bb0a-3f99c287e31e fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:42:47.568726+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=sathyabama-dean.herokuapp.com request_id=de930cc2-5e3f-4532-b93b-55713b0dadd2 fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:44:34.346003+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=f759e271-1b65-43a4-aafd-73ae6862beed fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:45:03.702947+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=c88de290-9310-4081-b2fc-3d7b17f4b8ba fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:47:29.006280+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=34d86977-88c2-4b03-b46a-ae2389854a4b fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:47:42.999334+00:00 app[api]: Starting process with command `python manage.py runserver` by user singh.s.kshetriya@gmail.com
+2020-01-18T12:47:47.584138+00:00 heroku[run.2843]: State changed from starting to up
+2020-01-18T12:47:47.418569+00:00 heroku[run.2843]: Awaiting client
+2020-01-18T12:47:47.437327+00:00 heroku[run.2843]: Starting process with command `python manage.py runserver`
+2020-01-18T12:55:00.201971+00:00 heroku[run.2843]: State changed from up to complete
+2020-01-18T12:55:00.187508+00:00 heroku[run.2843]: Process exited with status 0
+2020-01-18T12:57:14.665801+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=034c3217-9641-4f3b-b0e6-fc2ca8617172 fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-18T12:57:22.748137+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/authenticate/test" host=sathyabama-dean.herokuapp.com request_id=bd414818-73d0-4edf-b8eb-d8d93e073184 fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=http
+2020-01-18T12:57:23.411684+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=sathyabama-dean.herokuapp.com request_id=1321aa3c-88dc-4606-9a84-dc3f75887bf7 fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=http
+2020-01-18T12:58:45.356745+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=sathyabama-dean.herokuapp.com request_id=f9588fba-754c-41af-9df6-b9c078b11fb4 fwd="103.213.201.206" dyno= connect= service= status=503 bytes= protocol=https
