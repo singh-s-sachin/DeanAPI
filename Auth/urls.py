@@ -6,4 +6,5 @@ from rest_framework import routers
 urlpatterns = [
 	path('signin',views.create),
     path('create',views.update),
+    path('test',views.test),
 ]

@@ -39,3 +39,6 @@ def update(request):
     department=data["dept"]
     authenticate.objects.filter(uid=uid).update(name=name,mobile=mobile,regno=regno,dob=dob,department=department)
     return JsonResponse({"action":0,"message":"Sign in","uid":uid})
+@csrf_exempt
+def test(request):
+    return JsonResponse({"message":"success"})
