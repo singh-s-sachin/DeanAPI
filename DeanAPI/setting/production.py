@@ -1,4 +1,4 @@
-from .base import 
+import .base
 import dj_database_url
 
 ENVIRONMENT = 'production'
