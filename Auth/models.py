@@ -4,7 +4,7 @@ class authenticate(models.Model):
     name=models.CharField(max_length=50)
     uid=models.CharField(max_length=39,editable=False)
     image=models.CharField(max_length=250)
-    email=models.Auto(max_length=100,primary_key=True)
+    email=models.CharField(max_length=100,primary_key=True)
     mobile=models.CharField(max_length=12)
     dob=models.CharField(max_length=12)
     regno=models.CharField(max_length=10,editable=False)
