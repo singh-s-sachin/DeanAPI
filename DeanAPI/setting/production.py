@@ -1,4 +1,4 @@
-import .base
+from .base import STATICFILES_DIRS
 import dj_database_url
 
 ENVIRONMENT = 'production'
