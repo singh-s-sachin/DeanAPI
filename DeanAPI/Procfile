@@ -1,1 +1,1 @@
-web: gunicorn DeanAPI.wsgi --log-file
+web: gunicorn DeanAPI.wsgi --log-file -
