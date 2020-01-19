@@ -6,8 +6,15 @@ import json
 import uuid
 from datetime import date
 from django.views.decorators.csrf import csrf_exempt
+import hashlib
 @csrf_exempt
 def create(request):
+    try:
+        token=request.headers.get("Authorization")
+    except:
+        return JsonResponse({"action":404,"message":"Token required"})
+    if validate(token)==False:
+        return JsonResponse({"action":401,"message":"Access denied"})
     data = request.body.decode('utf-8')
     data = json.loads(data)
     name=data['name']
@@ -29,6 +36,12 @@ def create(request):
         return JsonResponse({"action":1,"message":"Sign up","uid":uid})
 @csrf_exempt
 def update(request):
+    try:
+        token=request.headers.get("Authorization")
+    except:
+        return JsonResponse({"action":404,"message":"Token required"})
+    if validate(token)==False:
+        return JsonResponse({"action":401,"message":"Access denied"})
     data = request.body.decode('utf-8')
     data = json.loads(data)
     uid=data["uid"]
@@ -39,6 +52,13 @@ def update(request):
     department=data["dept"]
     authenticate.objects.filter(uid=uid).update(name=name,mobile=mobile,regno=regno,dob=dob,department=department)
     return JsonResponse({"action":0,"message":"Sign in","uid":uid})
-@csrf_exempt
-def test(request):
-    return JsonResponse({"message":"success"})
+
+def validate(token):
+    base=str(date.today())
+    salt="_3bvihz^gvydh86k0+b34xq&+006^m#l)n@!9=s&t@^*xdyn"
+    salt+=base+salt
+    result = hashlib.sha256(salt.encode())
+    if(result.hexdigest()==token):
+        return(True)
+    else:
+        return(False)
