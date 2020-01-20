@@ -13,3 +13,5 @@ class authenticate(models.Model):
     department=models.CharField(max_length=5)
     admin=models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.email
