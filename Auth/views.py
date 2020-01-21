@@ -22,7 +22,7 @@ def create(request):
     email=data['email']
     mobile="**********"
     regno="**********"
-    dob=data['dob']
+    dob="**********"
     created=str(date.today())
     last_login=str(date.today())
     uid=str(uuid.uuid4())
