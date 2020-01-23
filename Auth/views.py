@@ -29,7 +29,7 @@ def create(request):
     try:
         k=authenticate.objects.get(email=email)
         if(k.regno=="**********"):
-            return JsonResponse({"action":1,"message":"Sign up","uid":uid})
+            return JsonResponse({"action":1,"message":"Sign up","uid":k.uid})
         authenticate.objects.filter(uid=k.uid).update(last_login=last_login)
         return JsonResponse({"action":0,"message":"Sign in","uid":k.uid})
     except:
