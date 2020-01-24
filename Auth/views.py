@@ -91,6 +91,7 @@ def admin_tasks(request):
                         authenticate.objects.filter(uid=to_uid).update(admin=True)
                         new=adminTransaction(to=to_uid,by=from_uid,date=str(date.today()))
                         new.save()
+                        return JsonResponse({"action":1,"message":"success"})
                     else:
                         return JsonResponse({"action":400,"message":"To user already a admin"})
                 except:
