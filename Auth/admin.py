@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import authenticate
+from .models import authenticate,adminTransaction
 # Register your models here.
 admin.site.site_header = 'Sathyabama | Dean-dashboard'
 admin.site.site_title = 'Sathyabama | Dean-app'
