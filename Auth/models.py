@@ -15,3 +15,10 @@ class authenticate(models.Model):
 
     def __str__(self):
         return self.email
+
+class adminTransaction(models.Model):
+    to=models.CharField(max_length=39,editable=False,primary_key=True)
+    by=models.CharField(max_length=39,editable=False)
+    date=models.CharField(max_length=10)
+    def __str__(self):
+        return self.to
