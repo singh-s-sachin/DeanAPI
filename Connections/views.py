@@ -99,8 +99,14 @@ def follow_task(request):
         else:
             return JsonResponse({"action":401,"message":"Not following"})
 def validate(token):
-    print("Edit me")
-    return(True)
+    base=str(date.today())
+    salt="_3bvihz^gvydh86k0+b34xq&+006^m#l)n@!9=s&t@^*xdyn"
+    salt+=base+salt
+    result = hashlib.sha256(salt.encode())
+    if(result.hexdigest()==token):
+        return(True)
+    else:
+        return(False)
 def makeFollow(to,by):
     new=follow(to=to,by=by,date=str(date.today()))
     new.save()
