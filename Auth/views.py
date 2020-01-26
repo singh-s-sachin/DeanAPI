@@ -4,9 +4,11 @@ from .models import authenticate,adminTransaction
 from django.http import JsonResponse
 import json
 import uuid
+from Connections.models import upcoming_feeds,post
 from datetime import date
 from django.views.decorators.csrf import csrf_exempt
 import hashlib
+from django.db.models import Max
 @csrf_exempt
 def create(request):
     try:
@@ -53,7 +55,10 @@ def update(request):
     regno=data['regno']
     department=data["dept"]
     authenticate.objects.filter(uid=uid).update(name=name,mobile=mobile,regno=regno,dob=dob,department=department)
-    return JsonResponse({"action":0,"message":"Sign in","uid":uid})
+    if create_feeds(uid):
+        return JsonResponse({"action":0,"message":"Sign in","uid":uid})
+    else:
+        return JsonResponse({"action":400,"message":"Already signed up","uid":uid})
 @csrf_exempt
 def admin_tasks(request):
     if request.method=='GET':
@@ -100,6 +105,27 @@ def admin_tasks(request):
                 return JsonResponse({"action":400,"message":"From user is not admin"})
         except:
              return JsonResponse({"action":401,"message":"From user dosen't exists"})
+
+def getName(uid):
+    try:
+        k=authenticate.objects.get(uid=uid)
+        return k.name
+    except:
+        return "Anonymus (Deleted followings)"
+def create_feeds(uid):
+    try:
+        k=upcoming_feeds.objects.get(uid=uid)
+        return False
+    except:
+        maxx=max_feeds()
+        new=upcoming_feeds(uid=uid,seen=maxx)
+        new.save()
+        return True
+def max_feeds():
+    k=post.objects.all().aggregate(Max('id'))
+    if k['id__max']==None:
+        return 0
+    return k['id__max']
 def validate(token):
     base=str(date.today())
     salt="_3bvihz^gvydh86k0+b34xq&+006^m#l)n@!9=s&t@^*xdyn"

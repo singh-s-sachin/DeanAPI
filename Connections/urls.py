@@ -2,5 +2,6 @@ from django.urls import path,include
 from . import views
 from rest_framework import routers
 urlpatterns = [
-	path('add',views.addpost),
+    path('posts',views.addpost),
+    path('follow',views.follow_task)
 ]

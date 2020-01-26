@@ -7,7 +7,7 @@ class authenticate(models.Model):
     email=models.CharField(max_length=100,primary_key=True)
     mobile=models.CharField(max_length=12)
     dob=models.CharField(max_length=12)
-    regno=models.CharField(max_length=10,editable=False)
+    regno=models.CharField(max_length=10)
     created=models.CharField(max_length=10,editable=False)
     last_login=models.CharField(max_length=10)
     department=models.CharField(max_length=5)
