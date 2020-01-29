@@ -4,7 +4,7 @@ from .models import authenticate,adminTransaction
 from django.http import JsonResponse
 import json
 import uuid
-from Connections.models import upcoming_feeds,post
+from Connections.models import upcoming_feeds,post,follow
 from datetime import date
 from django.views.decorators.csrf import csrf_exempt
 import hashlib
@@ -55,6 +55,8 @@ def update(request):
     regno=data['regno']
     department=data["dept"]
     authenticate.objects.filter(uid=uid).update(name=name,mobile=mobile,regno=regno,dob=dob,department=department)
+    new=follow(to=uid,by=uid,str(date.today()))
+    new.save()
     if create_feeds(uid):
         return JsonResponse({"action":0,"message":"Sign in","uid":uid})
     else:
