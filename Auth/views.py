@@ -55,8 +55,6 @@ def update(request):
     regno=data['regno']
     department=data["dept"]
     authenticate.objects.filter(uid=uid).update(name=name,mobile=mobile,regno=regno,dob=dob,department=department)
-    new=follow(to=uid,by=uid,str(date.today()))
-    new.save()
     if create_feeds(uid):
         return JsonResponse({"action":0,"message":"Sign in","uid":uid})
     else:
