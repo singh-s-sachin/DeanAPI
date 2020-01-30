@@ -36,7 +36,7 @@ def addpost(request):
                 return JsonResponse({"action":400,"message":"You are not authorized."})
         except:
             return JsonResponse({"action":404,"message":"User dosent exists."})
-    if request.method == 'GET':
+    if request.method == 'PUT':
         try:
             token=request.headers.get("Authorization")
         except:
@@ -70,7 +70,7 @@ def follow_task(request):
                 return JsonResponse({"action":201,"message":"success"})
             except:
                 return JsonResponse({"action":400,"message":"User dosent exists"})
-    if request.method == 'GET':
+    if request.method == 'PUT':
         try:
             token=request.headers.get("Authorization")
         except:

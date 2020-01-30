@@ -61,7 +61,7 @@ def update(request):
         return JsonResponse({"action":400,"message":"Already signed up","uid":uid})
 @csrf_exempt
 def admin_tasks(request):
-    if request.method=='GET':
+    if request.method=='PUT':
         try:
             token=request.headers.get("Authorization")
         except:
