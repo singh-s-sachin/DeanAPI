@@ -105,7 +105,27 @@ def admin_tasks(request):
                 return JsonResponse({"action":400,"message":"From user is not admin"})
         except:
              return JsonResponse({"action":401,"message":"From user dosen't exists"})
-
+    elif request.method=='GET':
+        try:
+            token=request.headers.get("Authorization")
+        except:
+            return JsonResponse({"action":404,"message":"Token required"})
+        if validate(token)==False:
+            return JsonResponse({"action":401,"message":"Access denied"})
+        k=authenticate.objects.filter(admin=True)
+        responseData=[]
+        for i in k:
+            resp={}
+            resp["name"]=i.name
+            resp["uid"]=i.uid
+            resp["image"]=i.image
+            resp["email"]=i.email
+            resp["mobile"]=i.mobile
+            resp["dob"]=i.dob
+            resp["regno"]=i.regno
+            resp["Department"]=i.department
+            responseData.append(resp)
+        return JsonResponse({"action":201,"profiles":responseData})
 def getName(uid):
     try:
         k=authenticate.objects.get(uid=uid)
